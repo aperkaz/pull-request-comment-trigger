@@ -37,8 +37,14 @@ async function run() {
         return;
     }
 
-    console.log('hi alain')
-    console.log(context);        
+    console.log('hi');
+    console.log(context)
+    const time = (new Date()).toTimeString();
+    core.setOutput("time", time);
+      // Get the JSON webhook payload for the event that triggered the workflow
+    const payload = JSON.stringify(github.context.payload, undefined, 2)
+    console.log(`The event payload: ${payload}`);
+    
     
     core.setOutput("triggered", "true");
     
