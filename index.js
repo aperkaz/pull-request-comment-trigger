@@ -38,6 +38,8 @@ async function run() {
     }
 
     core.setOutput("triggered", "true");
+    
+    console.log(context)
 
     if (!reaction) {
         return;
