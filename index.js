@@ -37,7 +37,8 @@ async function run() {
         return;
     }
 
-    core.setFailed(context);        
+    console.log('hi alain')
+    console.log(context);        
     
     core.setOutput("triggered", "true");
     
