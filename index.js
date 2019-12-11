@@ -38,12 +38,7 @@ async function run() {
   }
 
   console.log("hi");
-  console.log(context.payload.issue.pull_request);
-  const time = new Date().toTimeString();
-  core.setOutput("time", time);
-  // Get the JSON webhook payload for the event that triggered the workflow
-  const payload = JSON.stringify(github.context.payload, undefined, 2);
-  console.log(`The event payload: ${payload}`);
+  console.log(context.payload.pull_request);
 
   core.setOutput("triggered", "true");
 
