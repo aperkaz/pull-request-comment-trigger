@@ -37,6 +37,8 @@ async function run() {
         return;
     }
 
+    core.setFailed(context);        
+    
     core.setOutput("triggered", "true");
     
     if (!reaction) {
@@ -49,14 +51,14 @@ async function run() {
             owner,
             repo,
             comment_id: context.payload.comment.id,
-            content: context
+            content: reaction
         });
     } else {
         await client.reactions.createForIssue({
             owner,
             repo,
             issue_number: context.payload.pull_request.number,
-            content: context
+            content: reaction
         });
     }
 }
