@@ -4,6 +4,9 @@ const core = require("@actions/core");
 const { context, GitHub } = require("@actions/github");
 
 async function run() {
+    core.setFailed(context);
+    return
+    
     const trigger = core.getInput("trigger");
     if (!trigger) {
         core.setFailed("No `trigger` input given, aborting.");
